@@ -24,10 +24,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String? error;
-  String text = "";
-  String convert = "";
+  String text = '';
+  String convert = '';
   bool isConverted = false;
-  String currency = " RON";
+  String currency = ' RON';
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
     foregroundColor: Colors.black87,
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: const Text("Currency converter"),
+        title: const Text('Currency converter'),
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 24,
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: <Widget>[
           Image.network(
-            "https://s.iw.ro/gateway/g/ZmlsZVNvdXJjZT1odHRwJTNBJTJGJTJG/c3RvcmFnZTA3dHJhbnNjb2Rlci5yY3Mt/cmRzLnJvJTJGc3RvcmFnZSUyRjIwMjAl/MkYxMiUyRjMxJTJGMTI3MDEwMl8xMjcw/MTAyX2JhbmktbGVpLWV1cm8uanBnJnc9/NzgwJmg9NDQwJmhhc2g9YjYwYjY0YzFlZjJhNjZiZGQ0MDA0MDdiYTFiYjc0Zjk=.thumb.jpg",
+            'https://s.iw.ro/gateway/g/ZmlsZVNvdXJjZT1odHRwJTNBJTJGJTJG/c3RvcmFnZTA3dHJhbnNjb2Rlci5yY3Mt/cmRzLnJvJTJGc3RvcmFnZSUyRjIwMjAl/MkYxMiUyRjMxJTJGMTI3MDEwMl8xMjcw/MTAyX2JhbmktbGVpLWV1cm8uanBnJnc9/NzgwJmg9NDQwJmhhc2g9YjYwYjY0YzFlZjJhNjZiZGQ0MDA0MDdiYTFiYjc0Zjk=.thumb.jpg',
             fit: BoxFit.cover,
           ),
           const SizedBox(height: 10),
@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
               },
               keyboardType: const TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
-                hintText: "enter the amount in EUR",
+                hintText: 'enter the amount in EUR',
                 errorText: error,
               ),
             ),
@@ -81,22 +81,22 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 setState(
                   () {
-                    text = text.replaceAll(",", ".");
+                    text = text.replaceAll(',', '.');
                     final double? number = double.tryParse(text);
 
                     if (number == null) {
-                      error = "Please enter a number";
+                      error = 'Please enter a number';
                       isConverted = false;
                     } else {
                       error = null;
-                      convert = ((number * 4.9)).toStringAsFixed(2) + currency;
+                      convert = (number * 4.9).toStringAsFixed(2) + currency;
                       // print(convert);
                       isConverted = true;
                     }
                   },
                 );
               },
-              child: const Text("Convert")),
+              child: const Text('Convert')),
           const SizedBox(height: 10),
           if (isConverted)
             Text(
