@@ -1,16 +1,12 @@
-# tema_1
+# Currency Converter
 
-A new Flutter project.
+This is a basic Flutter application that allows you to convert from Euros to Lei.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Input field for entering the amount in Euros
+- Button for converting the entered Euro amount to Lei
 
-A few resources to get you started if this is your first Flutter project:
+## Usage
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Enter the amount in Euros in the input field and press the convert button to get the amount in Lei.
