@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomePage(),
     );
   }
@@ -27,13 +27,13 @@ class _HomePageState extends State<HomePage> {
   String text = "";
   String convert = "";
   bool isConverted = false;
-  String moneda = " RON";
+  String currency = " RON";
 
   final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
     foregroundColor: Colors.black87,
     backgroundColor: Colors.grey[300],
     minimumSize: const Size(88, 36),
-    padding: EdgeInsets.symmetric(horizontal: 16),
+    padding: const EdgeInsets.symmetric(horizontal: 16),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(2)),
     ),
@@ -62,12 +62,13 @@ class _HomePageState extends State<HomePage> {
             width: 380,
             child: TextField(
               onChanged: (String value) {
-                setState(() {
-                  text = value;
-                });
+                setState(
+                  () {
+                    text = value;
+                  },
+                );
               },
-              keyboardType:
-                  const TextInputType.numberWithOptions(decimal: true),
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
               decoration: InputDecoration(
                 hintText: "enter the amount in EUR",
                 errorText: error,
@@ -78,20 +79,22 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
               style: raisedButtonStyle,
               onPressed: () {
-                setState(() {
-                  text=text.replaceAll(",", ".");
-                  final double? number = double.tryParse(text);
+                setState(
+                  () {
+                    text = text.replaceAll(",", ".");
+                    final double? number = double.tryParse(text);
 
-                  if (number == null) {
-                    error = "Please enter a number";
-                    isConverted = false;
-                  } else {
-                    error = null;
-                    convert = ((number * 4.9)).toStringAsFixed(2) + moneda;
-                    // print(convert);
-                    isConverted = true;
-                  }
-                });
+                    if (number == null) {
+                      error = "Please enter a number";
+                      isConverted = false;
+                    } else {
+                      error = null;
+                      convert = ((number * 4.9)).toStringAsFixed(2) + currency;
+                      // print(convert);
+                      isConverted = true;
+                    }
+                  },
+                );
               },
               child: const Text("Convert")),
           const SizedBox(height: 10),
