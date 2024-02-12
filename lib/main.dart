@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: const Text("Currency convertor"),
+        title: const Text("Currency converter"),
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 24,
