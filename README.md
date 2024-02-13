@@ -10,3 +10,6 @@ This is a basic Flutter application that allows you to convert from Euros to Lei
 ## Usage
 
 Enter the amount in Euros in the input field and press the convert button to get the amount in Lei.
+
+## License
+This project is licensed under the terms of the MIT license.
